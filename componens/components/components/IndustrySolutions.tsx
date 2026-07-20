@@ -11,7 +11,7 @@ import {
 // Saat Anda menyalin kode ini ke Visual Studio Code lokal, Anda bisa mengaktifkan kembali baris impor di bawah ini
 // dan menghapus konstanta serta antarmuka `industrySolutions` lokal agar proyek Anda tetap modular:
 //
-// import { industrySolutions, SolutionItem } from '../lib/data';
+// import { industrySolutions, SolutionItem } from '@/lib/data';
 
 interface SolutionItem {
   id: string;

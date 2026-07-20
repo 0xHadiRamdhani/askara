@@ -2,7 +2,13 @@
 
 import React, { useState } from 'react';
 import { ChevronRight, Code, Bot, Smartphone, Cloud, LineChart, Database, CheckCircle2, ArrowRight } from 'lucide-react';
-import { services, ServiceItem } from '../lib/data';
+import { services, ServiceItem } from '@/lib/data';
+
+const WHATSAPP_NUMBER = "6285717171515";
+const WHATSAPP_TEXT = encodeURIComponent(
+  "Halo PT Askara Digital Technology,\n\nSaya mendapatkan informasi dari website Anda dan tertarik untuk berkonsultasi mengenai layanan yang ditawarkan.\n\nMohon informasi lebih lanjut.\n\nTerima kasih."
+);
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_TEXT}`;
 
 // Pemetaan nama string icon ke komponen Lucide React yang sesuai
 const IconMap = {

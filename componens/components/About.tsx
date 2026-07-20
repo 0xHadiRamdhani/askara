@@ -7,7 +7,7 @@ import { Target, Layers, CheckCircle2, Handshake, Zap, ShieldCheck } from 'lucid
 // Saat Anda menyalin kode ini ke Visual Studio Code lokal, Anda bisa mengaktifkan kembali baris impor di bawah ini
 // dan menghapus konstanta `coreValues` lokal agar proyek Anda tetap modular:
 //
-// import { coreValues } from '../lib/data';
+// import { coreValues } from '@/lib/data';
 
 interface ValueItem {
   title: string;

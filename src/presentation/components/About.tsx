@@ -1,19 +1,15 @@
 'use client';
 
 import React from 'react';
+import { ValueItem } from '../../domain/entities/types';
 import { Target, Layers, CheckCircle2, Handshake, Zap, ShieldCheck } from 'lucide-react';
 
 // --- CATATAN UNTUK VS CODE LOKAL ---
 // Saat Anda menyalin kode ini ke Visual Studio Code lokal, Anda bisa mengaktifkan kembali baris impor di bawah ini
 // dan menghapus konstanta `coreValues` lokal agar proyek Anda tetap modular:
 //
-// import { coreValues } from '@/lib/data';
 
-interface ValueItem {
-  title: string;
-  desc: string;
-  iconName: 'Handshake' | 'Zap' | 'ShieldCheck' | 'Target';
-}
+
 
 // Data didefinisikan secara lokal agar tidak memicu error resolusi berkas pada sistem pratinjau online
 const coreValues: ValueItem[] = [
@@ -47,7 +43,11 @@ const IconMap = {
   Target: Target,
 };
 
-export default function About() {
+interface Props {
+  coreValues: ValueItem[];
+}
+
+export default function About({ coreValues }: Props) {
   return (
     <section id="about" className="py-28 relative z-10 bg-[#030811] border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">

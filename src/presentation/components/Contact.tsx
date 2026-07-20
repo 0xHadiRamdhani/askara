@@ -1,13 +1,10 @@
 'use client';
 
 import React from 'react';
+import { WHATSAPP_URL } from '../../domain/constants';
 import { MapPin, Mail, Phone, ExternalLink } from 'lucide-react';
 
-const WHATSAPP_NUMBER = "6285717171515";
-const WHATSAPP_TEXT = encodeURIComponent(
-  "Halo PT Askara Digital Technology,\n\nSaya mendapatkan informasi dari website Anda dan tertarik untuk berkonsultasi mengenai layanan yang ditawarkan.\n\nMohon informasi lebih lanjut.\n\nTerima kasih."
-);
-const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_TEXT}`;
+
 
 export default function Contact() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {

@@ -1,13 +1,10 @@
 'use client';
 
 import React, { useState } from 'react';
+import { ApproachItem } from '../../domain/entities/types';
 import { CheckCircle2 } from 'lucide-react';
 
-interface ApproachItem {
-  step: string;
-  title: string;
-  desc: string;
-}
+
 
 // Data didefinisikan secara lokal agar tidak memicu error resolusi berkas pada sistem pratinjau online.
 // Saat Anda menyalin kode ini ke VS Code lokal, Anda bisa memindahkannya kembali ke data.ts jika diinginkan.
@@ -19,7 +16,11 @@ const approaches: ApproachItem[] = [
   { step: "05", title: "SUPPORT", desc: "Provide ongoing optimization and support" }
 ];
 
-export default function Process() {
+interface Props {
+  approaches: ApproachItem[];
+}
+
+export default function Process({ approaches }: Props) {
   const [activeStep, setActiveStep] = useState<number>(0);
 
   return (

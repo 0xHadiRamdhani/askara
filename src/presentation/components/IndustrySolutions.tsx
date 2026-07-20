@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { SolutionItem } from '../../domain/entities/types';
 import { 
   Factory, GraduationCap, Stethoscope, Hotel, Utensils, 
   Shirt, Users, Store, Landmark, BrainCircuit, CheckCircle2, 
@@ -11,18 +12,8 @@ import {
 // Saat Anda menyalin kode ini ke Visual Studio Code lokal, Anda bisa mengaktifkan kembali baris impor di bawah ini
 // dan menghapus konstanta serta antarmuka `industrySolutions` lokal agar proyek Anda tetap modular:
 //
-// import { industrySolutions, SolutionItem } from '@/lib/data';
 
-interface SolutionItem {
-  id: string;
-  title: string;
-  subtitle: string;
-  iconName: 'Factory' | 'GraduationCap' | 'Stethoscope' | 'Hotel' | 'Utensils' | 'Shirt' | 'Users' | 'Store' | 'Landmark' | 'BrainCircuit';
-  imageUrl: string;
-  features: string[];
-  benefit: string;
-  badge: string;
-}
+
 
 const industrySolutions: SolutionItem[] = [
   { 
@@ -141,13 +132,13 @@ const IconMap = {
   BrainCircuit: BrainCircuit,
 };
 
-const WHATSAPP_NUMBER = "6285717171515";
-const WHATSAPP_TEXT = encodeURIComponent(
-  "Halo PT Askara Digital Technology,\n\nSaya mendapatkan informasi dari website Anda dan tertarik untuk berkonsultasi mengenai solusi industri yang ditawarkan.\n\nMohon informasi lebih lanjut.\n\nTerima kasih."
-);
-const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_TEXT}`;
+import { WHATSAPP_URL } from '../../domain/constants';
 
-export default function IndustrySolutions() {
+interface Props {
+  industrySolutions: SolutionItem[];
+}
+
+export default function IndustrySolutions({ industrySolutions }: Props) {
   const [activeSolution, setActiveSolution] = useState<SolutionItem>(industrySolutions[0]);
 
   return (

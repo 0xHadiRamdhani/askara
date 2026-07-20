@@ -1,14 +1,10 @@
 'use client';
 
 import React, { useState } from 'react';
+import { ServiceItem } from '../../domain/entities/types';
 import { ChevronRight, Code, Bot, Smartphone, Cloud, LineChart, Database, CheckCircle2, ArrowRight } from 'lucide-react';
-import { services, ServiceItem } from '@/lib/data';
 
-const WHATSAPP_NUMBER = "6285717171515";
-const WHATSAPP_TEXT = encodeURIComponent(
-  "Halo PT Askara Digital Technology,\n\nSaya mendapatkan informasi dari website Anda dan tertarik untuk berkonsultasi mengenai layanan yang ditawarkan.\n\nMohon informasi lebih lanjut.\n\nTerima kasih."
-);
-const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_TEXT}`;
+import { WHATSAPP_URL } from '../../domain/constants';
 
 // Pemetaan nama string icon ke komponen Lucide React yang sesuai
 const IconMap = {
@@ -20,7 +16,11 @@ const IconMap = {
   Database: Database,
 };
 
-export default function Services() {
+interface Props {
+  services: ServiceItem[];
+}
+
+export default function Services({ services }: Props) {
   const [activeService, setActiveService] = useState<ServiceItem>(services[0]);
 
   return (
